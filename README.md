@@ -1,5 +1,7 @@
 # AI Chat Interface
 
+![AI Chat Interface Screenshot](./assets/app-screenshot.png)
+
 A sleek and modern web application that provides a chat interface to interact with an AI model from the Hugging Face Inference API. This project was built to demonstrate a clean UI, solid frontend architecture, and core principles of modern web development.
 
 ## Features
