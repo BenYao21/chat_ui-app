@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { getAiResponse } from '../services/aiService';
 
 export const useChat = () => {
@@ -21,7 +21,7 @@ export const useChat = () => {
     }
   }, [chatHistory]);
 
-  const handlePromptSubmit = async (prompt) => {
+  const handlePromptSubmit = useCallback(async (prompt) => {
     if (!prompt || isLoading) return;
 
     setIsLoading(true);
@@ -41,11 +41,11 @@ export const useChat = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [chatHistory, isLoading]);
 
-  const handleClearHistory = () => {
+  const handleClearHistory = useCallback(() => {
     setChatHistory([]);
-  };
+  }, []);
 
   return {
     chatHistory,
